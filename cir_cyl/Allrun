@@ -1,0 +1,9 @@
+#!/bin/sh
+
+
+blockMesh
+decomposePar
+mpirun -np 16 icoFoam -parallel > log.icoFoam
+reconstructPar
+rm -r proc*
+#------------------------------------------------------------------------------
